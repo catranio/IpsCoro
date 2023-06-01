@@ -4,7 +4,6 @@ list(APPEND CMAKE_MODULE_PATH ${doctest_SOURCE_DIR}/scripts/cmake)
 ips_add_target(${PROJECT_NAME}.tests EXECUTABLE
         HEADERS
         ${CMAKE_CURRENT_SOURCE_DIR}/../include/*
-        ${CMAKE_CURRENT_SOURCE_DIR}/../sources/*
         SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/*
         DEPENDS ${PROJECT_NAME} doctest::doctest)
 
