@@ -10,11 +10,13 @@ find_package(IpsCMakeModules PATHS ${IpsCMakeModules_CONFIG_DIR})
 ips_init(${PROJECT_NAME} CXX 23)
 
 ips_add_target(${PROJECT_NAME} STATIC
-        HEADERS ${CMAKE_CURRENT_SOURCE_DIR}/include/*
-        SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/sources/*)
-ips_pedantic_error(${PROJECT_NAME})
+        HEADERS ${CMAKE_CURRENT_SOURCE_DIR}/include/*)
 
 if (BUILD_TESTS)
     enable_testing()
     add_subdirectory(tests)
+endif ()
+
+if (BUILD_PLAYGROUND)
+    add_subdirectory(playground)
 endif ()
